@@ -6,16 +6,16 @@ import sqlite3
 import json
 __author__ = 'gzs2482'
 
-class game_service(service):
+class info_service(service):
     def __init__(self):
         service.__init__(self)
         commands = {
-            3000    : self.gameInit,
-            3001    : self.putChess,
-            3002    : self.gameChat,
-            3003    : self.regretAsk,
-            3004    : self.regretReply,
-            3005    : self.gameRes
+            3000    : self.activityInit,
+            3001    : self.showInfo,
+            3002    : self.infoChat,
+            3003    : self.togetherAsk,
+            3004    : self.togetherReply,
+            3005    : self.togetherRes
         }
         self.registers(commands)
         self.init()
@@ -26,7 +26,7 @@ class game_service(service):
         for i in range(16):
             self.games.append(game(i))
 
-    def gameInit(self, msg, owner, inputs):
+    def activityInit(self, msg, owner, inputs):
         seatID = msg['seatID']
         pos = msg['pos']
         user = msg['user']
@@ -39,7 +39,7 @@ class game_service(service):
         sendJson = json.dumps(cmd)
         owner.send(sendJson)
 
-    def putChess(self, msg, owner, inputs):
+    def showInfo(self, msg, owner, inputs):
         seatID = msg['seatID']
         color = msg['color']
         x = msg['x']
@@ -57,7 +57,7 @@ class game_service(service):
         for s in sock:
             s.send(sendJson)
 
-    def gameChat(self, msg, owner, inputs):
+    def togetherChat(self, msg, owner, inputs):
         seatID = msg['seatID']
         user = msg['user']
         text = '<p><b>[' + msg['user'] + ' said]:' + '</b></p></ br>' + '  ' + msg['text']
@@ -72,7 +72,7 @@ class game_service(service):
         for s in sock:
             s.send(sendJson)
 
-    def regretAsk(self, msg, owner, inputs):
+    def togetherAsk(self, msg, owner, inputs):
         seatID = msg['seatID']
         pos = msg['pos']
         sock = self.games[seatID].getSock()
@@ -84,7 +84,7 @@ class game_service(service):
         pos = 2 - pos
         sock[pos].send(sendJson)
 
-    def regretReply(self, msg, owner, inputs):
+    def togetherReply(self, msg, owner, inputs):
         seatID = msg['seatID']
         flag = msg['flag']
         cmd = {
@@ -98,7 +98,7 @@ class game_service(service):
         for s in sock:
             s.send(sendJson)
 
-    def gameRes(self, msg, owner, inputs):
+    def togetherRes(self, msg, owner, inputs):
         user = msg['user']
         addScore = msg['addScore']
         seatID = msg['seatID']
