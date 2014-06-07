@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:isScrollContainer="true">
+
+
+	<RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/edit_infotitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/info_head" />
+
+            <ImageButton
+                android:id="@+id/btn_infoback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back" />
+
+            <ImageButton
+                android:id="@+id/btn_infodel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/del" />
+        </RelativeLayout>
+    
+	<ImageButton
+            android:id="@+id/btn_infoPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/pic" />
+	
+    <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="    电话" 
+        android:editable="false"
+        android:background="@null"
+        />
+	<View 
+	    android:layout_height="2dp"
+	    android:layout_width="wrap_content"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginTop="10dp"
+	    android:background="#009999"
+	    />
+	
+	<EditText
+        android:paddingTop="10dp"
+        android:id="@+id/hangphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="      手机" 
+        android:editable="false"
+        android:background="@null"
+        />
+	
+	<Button
+        android:paddingTop="10dp"
+        android:id="@+id/hangphoneinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@null"
+        android:gravity="left"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginLeft="40dp"
+        />
+	
+	<EditText
+        android:paddingTop="10dp"
+        android:id="@+id/homephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:text="      固话" 
+        android:editable="false"
+        android:background="@null"
+        />
+	
+	<Button
+        android:paddingTop="10dp"
+        android:id="@+id/homephoneinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+	    android:layout_marginLeft="40dp"
+	    android:layout_marginRight="20dp"
+	    android:gravity="left"
+	    android:background="@null"
+        />
+	
+	<EditText
+        android:paddingTop="10dp"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="    电子邮件" 
+        android:editable="false"
+        android:background="@null"
+        />
+
+	<View 
+	    android:layout_height="2dp"
+	    android:layout_width="wrap_content"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginTop="10dp"
+	    android:background="#009999"
+	    />
+	
+	<EditText
+        android:paddingTop="10dp"
+        android:id="@+id/workmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:text="      工作邮件" 
+        android:editable="false"
+        android:background="@null"
+        />
+	
+	<EditText
+        android:paddingTop="10dp"
+        android:id="@+id/emailinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+        />
+	
+</LinearLayout>

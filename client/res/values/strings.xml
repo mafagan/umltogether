@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ADRList</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title">通讯录</string>
+    <string name="info_title">通讯录</string>
+    <string name="info_head">新联系人</string>
+    <string name="string_ok">确定</string>
+</resources>
