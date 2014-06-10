@@ -2,6 +2,7 @@
 #-*-coding:utf-8-*-
 __author__ = 'gzs2482'
 
+#game means an activity
 class game(object):
     def __init__(self, gid):
         self.gid = gid
