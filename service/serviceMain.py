@@ -63,12 +63,12 @@ class serviceMain(object):
         self.dispatcher.register(2002, self.roomSer)
         self.dispatcher.register(2003, self.roomSer)
         self.dispatcher.register(2004, self.roomSer)
-        self.dispatcher.register(3000, self.gameSer)
-        self.dispatcher.register(3001, self.gameSer)
-        self.dispatcher.register(3002, self.gameSer)
-        self.dispatcher.register(3003, self.gameSer)
-        self.dispatcher.register(3004, self.gameSer)
-        self.dispatcher.register(3005, self.gameSer)
+        self.dispatcher.register(3000, self.activitySer)
+        self.dispatcher.register(3001, self.activitySer)
+        self.dispatcher.register(3002, self.activitySer)
+        self.dispatcher.register(3003, self.activitySer)
+        self.dispatcher.register(3004, self.activitySer)
+        self.dispatcher.register(3005, self.activitySer)
     def __dispatch(self, msg, owner):
         self.dispatcher.dispatch(msg, owner)
 

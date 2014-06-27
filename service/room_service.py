@@ -20,16 +20,16 @@ class room_service(service):
         self.deskState = {}
 
     def roomSitDown(self, msg, owner, inputs):
-        res = self.desks[msg['seatID']].sitDown(msg)
+        res = self.desks[msg['activityID']].sitDown(msg)
         if res == 0:
             return
 
-        self.desks[msg['seatID']].setSock(res, owner)
-        self.desks[msg['seatID']].setState(res, False)
+        self.desks[msg['activityID']].setSock(res, owner)
+        self.desks[msg['activityID']].setState(res, False)
 
         cmd = {
             'id'        : 2001,
-            'seatID'    : msg['seatID'],
+            'activityID'    : msg['activityID'],
             'pos'       : res,
             'user'      : msg['user'],
             'standFlag' : False
@@ -37,15 +37,15 @@ class room_service(service):
 
         if msg['user'] in  self.deskState.keys():
             cmdd = {
-                'seatID'    : self.deskState[msg['user']][0],
+                'activityID'    : self.deskState[msg['user']][0],
                 'pos'       : self.deskState[msg['user']][1]
             }
             cmd['standFlag'] = True
-            cmd['UPseatID'] = self.deskState[msg['user']][0]
+            cmd['UPID'] = self.deskState[msg['user']][0]
             cmd['UPpos'] = self.deskState[msg['user']][1]
             self.roomStandUp(cmdd, owner, inputs)
 
-        self.deskState[msg['user']] = [msg['seatID'], res]
+        self.deskState[msg['user']] = [msg['activityID'], res]
 
 
 

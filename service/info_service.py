@@ -40,7 +40,7 @@ class info_service(service):
         owner.send(sendJson)
 
     def showInfo(self, msg, owner, inputs):
-        seatID = msg['seatID']
+        seatID = msg['activityID']
         color = msg['color']
         x = msg['x']
         y = msg['y']
@@ -58,7 +58,7 @@ class info_service(service):
             s.send(sendJson)
 
     def togetherChat(self, msg, owner, inputs):
-        seatID = msg['seatID']
+        seatID = msg['activityID']
         user = msg['user']
         text = '<p><b>[' + msg['user'] + ' said]:' + '</b></p></ br>' + '  ' + msg['text']
 
@@ -73,7 +73,7 @@ class info_service(service):
             s.send(sendJson)
 
     def togetherAsk(self, msg, owner, inputs):
-        seatID = msg['seatID']
+        seatID = msg['activityID']
         pos = msg['pos']
         sock = self.games[seatID].getSock()
 
@@ -85,7 +85,7 @@ class info_service(service):
         sock[pos].send(sendJson)
 
     def togetherReply(self, msg, owner, inputs):
-        seatID = msg['seatID']
+        seatID = msg['activityID']
         flag = msg['flag']
         cmd = {
             'id'    : 3004,
@@ -101,7 +101,7 @@ class info_service(service):
     def togetherRes(self, msg, owner, inputs):
         user = msg['user']
         addScore = msg['addScore']
-        seatID = msg['seatID']
+        seatID = msg['activityID']
         self.games[seatID].clear()
         dbPath = "DB/test.db"
         cx = sqlite3.connect(dbPath)
